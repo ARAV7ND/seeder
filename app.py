@@ -8,8 +8,10 @@ from blocklist import BLOCKLIST
 from flask_jwt_extended import JWTManager
 from db import db
 import os
+from dotenv import load_dotenv
 import models
 
+load_dotenv()
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -28,7 +30,7 @@ def create_app(db_url=None):
 
     api = Api(app)
 
-    app.config["JWT_SECRET_KEY"] = "JHON"
+    app.config["JWT_SECRET_KEY"] = os.getenv("SECRET_KEY")
     jwt = JWTManager(app)
 
     @jwt.additional_claims_loader

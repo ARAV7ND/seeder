@@ -22,7 +22,6 @@ class CashKickList(MethodView):
     @blp.arguments(CashKickSchema)
     @blp.response(201, CashKickSchema)
     def post(self, cash_kick_data):
-        print("user::", cash_kick_data)
         user_data = UserDataModel.query.get_or_404(cash_kick_data["user_id"])
         if user_data:
             cash_kick = CashKickModel(**cash_kick_data)
