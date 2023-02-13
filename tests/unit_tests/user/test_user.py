@@ -30,8 +30,8 @@ def test_invalid_login(client):
 
     login_response = client.post(routes["LOGIN"],
                                  json={
-                                     "username": "user1",
-                                     "password": "user1"
+                                     "username": f'{user_payload["username"]}1',
+                                     "password": f'{user_payload["password"]}1'
                                  })
     assert login_response.status_code == 401
 

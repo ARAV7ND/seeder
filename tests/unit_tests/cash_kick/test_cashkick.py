@@ -72,8 +72,8 @@ def test_cash_kick_get_by_id(client, app):
 
     login_response = client.post(routes["LOGIN"],
                                  json={
-                                     "username": "user",
-                                     "password": "user"
+                                     "username": user_payload["username"],
+                                     "password": user_payload["password"]
                                  })
     assert login_response.status_code == 200
 
@@ -97,8 +97,8 @@ def test_cash_kick_update(client, app):
 
     login_response = client.post(routes["LOGIN"],
                                  json={
-                                     "username": "user",
-                                     "password": "user"
+                                     "username": user_payload["username"],
+                                     "password": user_payload["password"]
                                  })
     assert login_response.status_code == 200
     contract_response = client.post(routes["CONTRACTS"],
@@ -135,8 +135,8 @@ def test_cash_kick_delete(client, app):
 
     login_response = client.post(routes["LOGIN"],
                                  json={
-                                     "username": "user",
-                                     "password": "user"
+                                     "username": user_payload["username"],
+                                     "password": user_payload["password"]
                                  })
     assert login_response.status_code == 200
 

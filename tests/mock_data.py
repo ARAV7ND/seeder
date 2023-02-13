@@ -1,9 +1,12 @@
+from dotenv import load_dotenv
+import os
+load_dotenv()
 user_payload = {
     "name": "yashwanth",
     "address": "hyderabad",
     "phone": 121655454,
     "username": "user",
-    "password": "user"
+    "password": os.getenv("DEFAULT_KEY")
 }
 contract_payload = {
     "duration": "13 months",
